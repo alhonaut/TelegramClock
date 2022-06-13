@@ -24,7 +24,7 @@ def get_time_now():
         return f'0{datetime.now().hour + 3}:0{datetime.now().minute}'
     elif datetime.now().hour < 7:
         return f'0{datetime.now().hour + 3}:{datetime.now().minute}'
-    elif datetime.now().minute < 7:
+    elif datetime.now().minute < 10:
         return f'{datetime.now().hour + 3}:0{datetime.now().minute}'
     else:
         return f'{datetime.now().hour + 3}:{datetime.now().minute}'
