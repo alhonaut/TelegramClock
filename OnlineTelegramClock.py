@@ -20,14 +20,14 @@ def get_image():
     image.save('image.png')
 
 def get_time_now():
-    if datetime.now().hour < 10 and datetime.now().minute < 10:
-        return f'0{datetime.now().hour}:0{datetime.now().minute}'
-    elif datetime.now().hour < 10:
-        return f'0{datetime.now().hour}:{datetime.now().minute}'
-    elif datetime.now().minute < 10:
-        return f'{datetime.now().hour}:0{datetime.now().minute}'
+    if datetime.now().hour < 7 and datetime.now().minute < 7:
+        return f'0{datetime.now().hour + 3}:0{datetime.now().minute}'
+    elif datetime.now().hour < 7:
+        return f'0{datetime.now().hour + 3}:{datetime.now().minute}'
+    elif datetime.now().minute < 7:
+        return f'{datetime.now().hour + 3}:0{datetime.now().minute}'
     else:
-        return f'{datetime.now().hour}:{datetime.now().minute}'
+        return f'{datetime.now().hour + 3}:{datetime.now().minute}'
 
 def main():
     date = datetime.now().minute
@@ -39,7 +39,7 @@ def main():
                 client.connect()
                 client(DeletePhotosRequest(client.get_profile_photos('me')))
                 client(UploadProfilePhotoRequest(
-                client.upload_file('image.png')))
+                    client.upload_file('image.png')))
             date = datetime.now().minute
         else:
             time.sleep(1)
