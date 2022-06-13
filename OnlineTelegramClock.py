@@ -1,7 +1,7 @@
 from telethon.sync import TelegramClient
 from telethon.tl.functions.photos import UploadProfilePhotoRequest, DeletePhotosRequest
 from PIL import Image, ImageDraw, ImageFont
-from datetime import datetime
+from datetime import datetime, timedelta
 import time
 
 api_id = 14798336
@@ -21,13 +21,13 @@ def get_image():
 
 def get_time_now():
     if datetime.now().hour < 7 and datetime.now().minute < 10:
-        return f'0{datetime.now().hour + 3}:0{datetime.now().minute}'
+        return f'0{datetime.now().hour + timedelta(hours=3)}:0{datetime.now().minute}'
     elif datetime.now().hour < 7:
-        return f'0{datetime.now().hour + 3}:{datetime.now().minute}'
+        return f'0{datetime.now().hour + timedelta(hours=3)}:{datetime.now().minute}'
     elif datetime.now().minute < 10:
-        return f'{datetime.now().hour + 3}:0{datetime.now().minute}'
+        return f'{datetime.now().hour + timedelta(hours=3)}:0{datetime.now().minute}'
     else:
-        return f'{datetime.now().hour + 3}:{datetime.now().minute}'
+        return f'{datetime.now().hour + timedelta(hours=3)}:{datetime.now().minute}'
 
 def main():
     date = datetime.now().minute
