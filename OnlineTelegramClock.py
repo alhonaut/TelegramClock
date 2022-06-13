@@ -20,7 +20,7 @@ def get_image():
     image.save('image.png')
 
 def get_time_now():
-    if datetime.now().hour < 7 and datetime.now().minute < 7:
+    if datetime.now().hour < 7 and datetime.now().minute < 10:
         return f'0{datetime.now().hour + 3}:0{datetime.now().minute}'
     elif datetime.now().hour < 7:
         return f'0{datetime.now().hour + 3}:{datetime.now().minute}'
