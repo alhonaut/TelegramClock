@@ -20,14 +20,14 @@ def get_image():
     image.save('image.png')
 
 def get_time_now():
-    if datetime.now().hour < 7 and datetime.now().minute < 10:
-        return f'0{datetime.now().hour + timedelta(hours=3)}:0{datetime.now().minute}'
-    elif datetime.now().hour < 7:
-        return f'0{datetime.now().hour + timedelta(hours=3)}:{datetime.now().minute}'
+    if (datetime.now() + timedelta(hours=3)).hour < 10 and datetime.now().minute < 10:
+        return f'0{(datetime.now() + timedelta(hours=3)).hour}:0{datetime.now().minute}'
+    elif (datetime.now() + timedelta(hours=3)).hour < 10:
+        return f'0{(datetime.now() + timedelta(hours=3)).hour}:{datetime.now().minute}'
     elif datetime.now().minute < 10:
-        return f'{datetime.now().hour + timedelta(hours=3)}:0{datetime.now().minute}'
+        return f'{(datetime.now() + timedelta(hours=3)).hour}:0{datetime.now().minute}'
     else:
-        return f'{datetime.now().hour + timedelta(hours=3)}:{datetime.now().minute}'
+        return f'{(datetime.now() + timedelta(hours=3)).hour}:{datetime.now().minute}'
 
 def main():
     date = datetime.now().minute
