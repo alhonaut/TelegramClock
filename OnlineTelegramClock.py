@@ -4,8 +4,8 @@ from PIL import Image, ImageDraw, ImageFont
 from datetime import datetime, timedelta
 import time
 
-api_id = 14798336
-api_hash = 'c87ba486bb1e398f73abb97f3b8dec0f'
+api_id = 00000000
+api_hash = 'api_hash'
 
 def get_image():
     image = Image.open('Clock.png')
