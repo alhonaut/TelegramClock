@@ -1,3 +1,3 @@
-УВАГА!!!
-Це програмка для зміни аватарки в телеграмі на онлайн годинник з точним часом!
-дякую за увагу
+WARNING!!! 
+This is a program for changing the avatar in Telegram to an online clock with the exact time! 
+Thank you
